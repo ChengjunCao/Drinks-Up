@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink It</title>
+</head>
+<body>
+
+    <h1>Favorites</h1>
+
+{% for drink in drinks %}
+
+  <a href="{% url 'detail' drink.id %}">
+    <div class="card">
+        <div class="card-content">
+
+            <span class="card-title">{{ drink.name }}</span>
+            <p>Category: {{ drink.category }}</p>
+            <p>Description: {{ drink.description }}</p>
+            <p>Rating: {{ drink.rating }}</p>
+            <p>Price: {{ drink.price }}</p>
+          
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+<footer>
+    <div class="navbar">
+        <a href="/search">SEARCH</a>
+        <a href="/">HOME</a>
+    </div>
+</footer>
+
+</body>
+
+</html>
+
