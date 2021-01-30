@@ -1,0 +1,17 @@
+<h1>Favorites</h1>
+
+{% for drink in drinks %}
+
+<a href="{% url 'detail' drink.id %}">
+    {{ drink.name }}
+    <p>Type: {{ drink.type }}</p>
+    <p>Price: ${{ drink.price }}</p>
+</a>
+{% endfor %}
+
+<footer>
+    <div class="navbar">
+        <a href="/search">SEARCH</a>
+        <a href="/home/">HOME</a>
+    </div>
+</footer>

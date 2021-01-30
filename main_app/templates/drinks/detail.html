@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ drink.name }}</h1>
+<p>Type: {{ drink.type }}</p>
+<p>Description: {{ drink.description }}</p>
+<p>Rating: {{ drink.rating }}</p>
+<p>Price: ${{ drink.price }}</p>
+
+<a href="{% url 'drinks_update' drink.id %}">Edit</a>
+<a href="{% url 'drinks_delete' drink.id %}">Delete</a>
+<a href="{% url 'index' %}">Back</a>
+
+{% endblock %}
