@@ -31,3 +31,5 @@ class Drink(models.Model):
 
     class Meta:
         ordering = ['-rating']
+
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if results %}
+
+  {% for result in results %}
+    <h2>{{ result.name }}</h2>
+    <p>Type: {{ result.type }}</p>
+    <p>Description: {{ result.description }}</p>
+    <p>Rating: {{ result.rating }}</p>
+    <p>Price: ${{ result.price }}</p>
+  {% endfor %}
+
+{% else %}
+  <h2>Search not found!</h2>
+
+{% endif %}
+
+
+{% endblock %}

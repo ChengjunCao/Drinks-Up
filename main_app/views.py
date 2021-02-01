@@ -49,3 +49,15 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+def search_page(request):
+  return render(request, 'drinks/search_page.html')
+
+def search_result(request):
+  search = request.POST['drink_name']
+  # print('Searching for', search)
+  results = Drink.objects.filter(name__contains=search)
+  # print (results)
+  return render(request, 'drinks/result.html', {'results': results})
+
+
