@@ -3,6 +3,7 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   flex-direction: column;
+  background-color: black;
 }
 
 #home-img {
