@@ -26,7 +26,7 @@ def drinks_detail(request, drink_id):
 
 def create_page(request):
   drink_form = DrinkForm()
-  return render(request, 'main_app/create_page.html', {'drink_form': drink_form})
+  return render(request, 'main_app/drink_form.html', {'drink_form': drink_form})
 
 def create_drink(request):
   image_file = request.FILES.get('image-file', None)
@@ -40,9 +40,10 @@ def create_drink(request):
       drink = Drink(url=url, name=request.POST['name'], location=request.POST['location'], price=request.POST['price'],
                     type=request.POST['type'], rating=request.POST['rating'], description=request.POST['description'], user=request.user)
       drink.save()
+      return redirect('detail', drink_id=drink.id)
     except:
       print('An error occurred uploading file to S3')
-  return redirect('index')
+  
 
 def update_page(request, drink_id):
   drink = Drink.objects.get(id=drink_id)
