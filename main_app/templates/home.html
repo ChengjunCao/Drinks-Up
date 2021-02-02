@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'logout' %}">Log Out</a></li>
+    {% endif %}
 <h1>Drink It</h1>
 <img id="home-img" src="https://carolynmantia.files.wordpress.com/2013/08/martini-2.jpg">
-<h3>Favorite Drinks</h3>
+<h3>Recent Drinks</h3>
 {% for drink in drinks %}
-  {% if drink.rating >= 8 %}
     <a href="{% url 'detail' drink.id %}">
         <li>{{ drink.name }}</li>
     </a>
-  {% endif %}
 {% endfor %}
 <a href="">Search Drink</a>
-<a href="{% url 'drinks_create' %}">Add Drink</a>
+<a href="{% url 'create_page' %}">Add Drink</a>
 {% endblock %}

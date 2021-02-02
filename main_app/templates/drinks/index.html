@@ -1,17 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h1>Favorites</h1>
 
 {% for drink in drinks %}
 
 <a href="{% url 'detail' drink.id %}">
-    {{ drink.name }}
-    <p>Type: {{ drink.type }}</p>
-    <p>Price: ${{ drink.price }}</p>
+    <div>
+        <img src='{{ drink.url }}'>
+        {{ drink.name }}
+        <p>{{ drink.location }}</p>
+        <p>{{ drink.rating }}</p>
+        <p>${{ drink.price }}</p>
+    </div>
 </a>
 {% endfor %}
 
 <footer>
     <div class="navbar">
         <a href="/search">SEARCH</a>
-        <a href="/home/">HOME</a>
+        <a href="/create/">ADD</a>
+        <a href="/index/">FAVORITES</a>
     </div>
 </footer>
+{% endblock %}

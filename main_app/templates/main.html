@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Welcome to Drink-It</h1>
+<h1>Drinks Up!</h1>
+
+    <li><a href="{% url 'login' %}">Sign In</a></li>
+    <li><a href="{% url 'signup' %}">Register</a></li>
 
 {% endblock %}

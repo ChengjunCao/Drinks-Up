@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>Sign Up</h1>
+<body>
+<h1>Don't have an account?</h1>
 
 {% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
 
@@ -10,5 +10,6 @@
     {{ form.as_p }}
     <input type="submit" class="btn" value="signup">
 </form>
-
+</body>
 {% endblock %}
+
