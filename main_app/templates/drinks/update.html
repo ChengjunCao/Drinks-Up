@@ -4,7 +4,7 @@
 
 <img src="{{drink.url}}">
 
-<form action="" method="post">
+<form action="{% url 'update_drink' drink.id%}" method="post">
     {% csrf_token %}
     
     <label for="name">What did you drink?</label>
