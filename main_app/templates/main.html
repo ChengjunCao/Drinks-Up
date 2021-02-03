@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Drinks Up!</h1>
-
-    <li><a href="{% url 'login' %}">Sign In</a></li>
-    <li><a href="{% url 'signup' %}">Register</a></li>
+<h1 id="main-message">Drinks Up!</h1>
+    <img id="main-img" src='https://i.imgur.com/lPWfyll.png'>
+    <a class="login-link" href="{% url 'login' %}">
+        <div class="login">Sign In</div>
+    </a>
+    <a class="login-link" href="{% url 'signup' %}">
+        <div class="login">Register</div>
+    </a>
 
 {% endblock %}

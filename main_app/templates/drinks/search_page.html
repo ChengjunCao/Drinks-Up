@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Find Your Drink</h2>
+
+<form action="{% url 'result' %}" method="POST">
+    {% csrf_token %}
+    <input type="search" name="drink_name" placeholder="Find Your Drink!">
+    <button type="submit">Search</button>
+</form>
+<br>
+
+<button type="submit">Alcoholic Beverages</button>
+<br>
+<button type="submit">Non-Alcoholic Beverages</button><br>
+<br>
+
+<a href="/home/">HOME</a>
+
+{% endblock %}

@@ -61,11 +61,6 @@ def update_drink(request, drink_id):
   drink.save()
   return redirect('detail', drink_id=drink_id)
 
-
-# class DrinkUpdate(UpdateView):
-#   model = Drink
-#   fields = ['type', 'price', 'description']
-
 class DrinkDelete(DeleteView):
   model = Drink
   success_url = '/drinks/'
@@ -83,3 +78,14 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+
+def search_page(request):
+  return render(request, 'drinks/search_page.html')
+
+
+def search_result(request):
+  search = request.POST['drink_name']
+  results = Drink.objects.filter(name__contains=search)
+  print(results)
+  return render(request, 'drinks/result.html', {'results': results})
