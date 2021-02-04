@@ -195,8 +195,10 @@ input[type=password] {
 #signout-icon {
   position: absolute;
   right: 13px;
-  top: 11px;
+  top: 9px;
   z-index: 0;
+  width: 30px;
+  height: auto;
 }
 
 #create-page {
