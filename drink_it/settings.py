@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main_app',
-    'svg',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
