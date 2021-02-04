@@ -81,7 +81,6 @@ class DrinkDelete(LoginRequiredMixin, DeleteView):
   model = Drink
   success_url = '/home/'
 
-@login_required
 def signup(request):
   error_message = ''
   if request.method == 'POST':
