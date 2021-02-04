@@ -1,28 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if object %}
-<h1>Edit <span class="teal-text">{{object.name}}</span></h1>
-{% else %}
+<header class='headbar'>
+    <a href="{% url 'main' %}">
+        <svg id="backsign" width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8 15.0006C7.756 15.0006 7.512 14.9115 7.319 14.7325L0.319 8.23355C0.116 8.04355 0 7.77855 0 7.50055C0 7.22255 0.116 6.95755 0.319 6.76755L7.319 0.26755C7.724 -0.10845 8.356 -0.08545 8.732 0.31955C9.108 0.72455 9.085 1.35755 8.681 1.73355L2.47 7.50055L8.681 13.2685C9.085 13.6435 9.108 14.2755 8.732 14.6816C8.536 14.8935 8.269 15.0006 8 15.0006Z"
+                fill="#FBC928" />
+        </svg>
+    </a>
+    <p>Drinks Up!</p>
+    <svg id="homesign" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="#FBC928" />
+    </svg>
+</header>
 <h1>What are you drinking?</h1>
-{% endif %}
+
 <form action="{% url 'drink_form' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" name="image-file">
-    <label for="name">What did you drink?</label>
-    <input name='name' placeholder="Tim Simmons">
-    <label for="location">Where'd you get it?</label>
-    <input name='location' placeholder="1234 John Street OR Tim's Bar">
-    <label for="price">Price</label>
-    <input name='price'>
+    <label class="custom-file-upload" for="image-file">+</label><br>
+    <input type="file" id="image-file" name="image-file"><br>
+    <label for="name">What did you drink?</label><br>
+    <input type='text' name='name'><br>
+    <label for="location">Where'd you get it?</label><br>
+    <input type='text' name='location'><br>
+    <label for="price">Price</label><br>
+    <input type='text' name='price'><br>
     <select id='type' name='type'>
         <option value=''></option>
         <option value='Cocktail'>Cocktail</option>
         <option value='Wine'>Wine</option>
         <option value='Beer'>Beer</option>
         <option value='Non-Alcoholic'>Non-Alcoholic</option>
-    </select>
-    <label for="rating">Rating</label>
+    </select><br>
+    <label for="rating">Rating</label><br>
     <select id='rating' name='rating'>
         <option value=''></option>
         <option value='10'>10</option>
@@ -35,9 +46,9 @@
         <option value='3'>3</option>
         <option value='2'>2</option>
         <option value='1'>1</option>
-    </select>
-    <label for="description">Description</label>
-    <textarea name="description" rows="3" cols="30"></textarea>
+    </select><br>
+    <label for="description">Description</label><br>
+    <textarea name="description" rows="3" cols="30"></textarea><br>
     <a href="{% url 'home' %}">Back</a>
     <input type="submit" value="Submit!" class="btn">
 </form>

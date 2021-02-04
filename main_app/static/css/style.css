@@ -4,7 +4,138 @@ body {
   min-height: 100vh;
   flex-direction: column;
   background-color: black;
-  color: white;
+  color: rgba(251,201,40,1);
+}
+/* main page styles */
+#main-message {
+  position: relative;
+  text-align: center;
+  height: 60px;
+  font-size: 48px;
+  font-family: 'Faustina', serif;
+}
+
+#main-img {
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  left: 0px;
+  top: 182px;
+  margin-bottom: 30px;
+}
+
+.login-link {
+  color: rgba(251,201,40,1);
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  border-radius: 2px;
+  margin: 10px auto;
+  background-color: rgba(29,62,93,1);
+}
+
+/* Sign In/Register styles */
+.headbar {
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Faustina', serif;
+}
+
+#backsign {
+  position: absolute;
+  left: 16px;
+  top:16px;
+}
+
+#homesign {
+  position: absolute;
+  right: 13px;
+  top: 11px;
+}
+
+.login-form {
+  margin: 60px 23px 0 23px;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  color: #FFFFC1;
+}
+
+.login-message {
+  color:#E38000;
+  font-size: 24px;
+  font-family: 'Faustina', serif;
+}
+
+input, select, textarea{
+  color: #FFFFC1;
+}
+
+textarea:focus, input:focus {
+  color: #FFFFC1;
+}
+
+input[type=submit] {
+  margin-top: 40px;
+  font-size: 24px;
+  color: rgba(251,201,40,1);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  border-radius: 2px;
+  background-color: rgba(29,62,93,1);
+}
+
+input[type=text] {
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid #FFFFC1;
+  font-size: 20px;
+  width: 95%
+}
+
+input[type=password] {
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid #FFFFC1;
+  font-size: 20px;
+  width: 95%
+}
+
+#image-file {
+  display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.validation {
+  font-size: 14px;
+  color: #FFFFC1;
+  margin: 0 0 20px 0;
 }
 
 #home-img {
