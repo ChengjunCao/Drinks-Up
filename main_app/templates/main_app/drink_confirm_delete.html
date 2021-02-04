@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Delete Drink</h1>
 
-<h4>Are you sure you want to delete <span class="teal-text">{{ object.name }}</span>?</h4>
+<header class='headbar'>
+    <a href="{% url 'detail' drink.id %}">
+        <svg id="backsign" width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8 15.0006C7.756 15.0006 7.512 14.9115 7.319 14.7325L0.319 8.23355C0.116 8.04355 0 7.77855 0 7.50055C0 7.22255 0.116 6.95755 0.319 6.76755L7.319 0.26755C7.724 -0.10845 8.356 -0.08545 8.732 0.31955C9.108 0.72455 9.085 1.35755 8.681 1.73355L2.47 7.50055L8.681 13.2685C9.085 13.6435 9.108 14.2755 8.732 14.6816C8.536 14.8935 8.269 15.0006 8 15.0006Z"
+                fill="#FBC928" />
+        </svg>
+    </a>
+    <p id="drinks-up">Drinks Up!</p>
+    <a href="{% url 'home' %}">
+        <svg id="homesign" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="#FBC928" />
+        </svg>
+    </a>
+</header>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="btn">
-    <a href="{% url 'detail' drink.id %}">Cancel</a>
-</form>
+<main id="delete-page">
+
+    <h2>Are you sure you want to delete <span class="confirm-delete-msg">{{ object.name }}</span>?</h4>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Delete" class="btn">
+    </form>
+</main>
 {% endblock %}
