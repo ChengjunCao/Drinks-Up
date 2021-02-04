@@ -1,27 +1,39 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<h1>Favorites</h1>
 
-{% for drink in drinks %}
+<div class="container2">
+  <main class="main-section2">
 
-<a href="{% url 'detail' drink.id %}">
-    <div>
-        <img src='{{ drink.url }}'>
-        {{ drink.name }}
-        <p>{{ drink.location }}</p>
-        <p>{{ drink.rating }}</p>
-        <p>${{ drink.price }}</p>
-    </div>
-</a>
-{% endfor %}
+    <h2 id="mid_head2">Favorites</h2>
 
-<footer>
-    <div class="navbar">
-        <a href="/search">SEARCH</a>
-        <a href="/create/">ADD</a>
-        <a href="/index/">FAVORITES</a>
-    </div>
-</footer>
+    {% for drink in drinks %} 
+        <a href="{% url 'detail' drink.id %}">
+            <div class="list-content2">
+
+                <ul id="list2">
+        
+                    <img id="drinks-img" src="{{drink.url}}">
+                    
+                    <div class="list-3">
+                        <p class="name1">{{ drink.name }}</p>
+                        <p class="location1">{{ drink.location }}</p>
+                    </div>
+                    <br>
+                    <div class="list-4">
+                        <img id="star1" src="https://i.imgur.com/dGiT9bH.png">
+                        <p class="rating1">{{ drink.rating }}</p>
+                        <p class="price1">{{ drink.price }}</p>
+                    </div>
+        
+                </ul>
+        
+            </div>
+        </a>
+    {% endfor %} 
+
+  </main> 
+</div>
+
 {% endblock %}
+

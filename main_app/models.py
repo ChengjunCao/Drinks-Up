@@ -50,3 +50,5 @@ class Drink(models.Model):
 
     class Meta:
         ordering = ['-create_at']
+
+

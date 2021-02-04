@@ -1,13 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  display: flex;
-  margin: 0 auto;
-  min-height: 100vh;
-  flex-direction: column;
   background-color: black;
   color: white;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#top_head {
+  font-family: Faustina;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px; 
+  color: #FBC928;
+  text-align: center;
+
 }
 
 #home-img {
-  width: 250px;
-  height: auto;
+  width: 100%;
+  height: 225px;
 }
+
+#mid_head {
+  font-family: Faustina;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 45px;
+  color: #E38000;
+  width: 221px;
+  height: 37px;
+}
+
+.list-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#beer-mug {
+  display: flex;
+  background: black;
+  width: 61px;
+  height: 90px;
+}
+
+.list-1 {
+  font-family: Tajawal;
+  text-align: center;
+  line-height: normal;
+  color: #FFFFC1;
+  font-size: 15px;
+  width: 100px;
+}
+
+.list-2 {
+  font-family: Tajawal;
+  color: #FFFFC1;
+  font-size: 14px;
+  width: 480px;
+}
+
+#star {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 400px;
+}
+
+
+/* index page */
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#mid_head2 {
+  font-family: Faustina;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 45px;
+  color: #E38000;
+  width: 221px;
+  height: 37px;
+}
+
+.list-content2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#list2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+}
+
+#drinks-img {
+  display: flex;
+  background: black;
+  width: 70px;
+  height: 70px;
+}
+
+.list-3 {
+  font-family: Tajawal;
+  text-align: center;
+  line-height: normal;
+  color: #FFFFC1;
+  font-size: 19px;
+  width: 100px;
+}
+
+.list-4 {
+  font-family: Tajawal;
+  color: #FFFFC1;
+  font-size: 14px;
+  width: 480px;
+}
+
+#star1 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 396px;
+}
+
+
+

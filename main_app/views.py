@@ -7,8 +7,11 @@ import uuid
 import boto3
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'albumcollector'
+
+
 def main(request):
   return render(request, 'main.html')
 
@@ -83,3 +86,15 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+def search_page(request):
+  return render(request, 'drinks/search_page.html')
+
+def search_result(request):
+  search = request.POST['drink_name']
+  # print('Searching for', search)
+  results = Drink.objects.filter(name__contains=search)
+  # print (results)
+  return render(request, 'drinks/result.html', {'results': results})
+
+  

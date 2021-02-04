@@ -1,22 +1,28 @@
 {% extends 'base.html' %}
-
 {% block content %}
+
+<div class="detail-page">
+
+    {% if drink.url %}
+      <img src="{{drink.url}}">
+    {% else %}
+      <div>No Image Uploaded</div>
+    {% endif %}
+
+    <p>{{ drink.price }}</p>
+    <p>{{ drink.rating }}</p>
+    <p>Description</p>
+    <p>{{ drink.description }}</p>
+    <p>Location</p>
+    <p>{{ drink.location }}</p>
+
+</div>
+
 <h1>{{ drink.name }}</h1>
-{% if drink.url %}
-<img src="{{drink.url}}">
-{% else %}
-<div>No Image Uploaded</div>
-{% endif %}
 
-<p>{{ drink.price }}</p>
-<p>{{ drink.rating }}</p>
-<p>Description</p>
-<p>{{ drink.description }}</p>
-<p>Location</p>
-<p>{{ drink.location }}</p>
-
-<a href="{% url 'update_page' drink.id %}">Edit</a>
+<!-- <a href="{% url 'update_page' drink.id %}">Edit</a>
 <a href="{% url 'drinks_delete' drink.id %}">Delete</a>
-<a href="{% url 'index' %}">Back</a>
+<a href="{% url 'index' %}">Back</a> -->
 
 {% endblock %}
+
