@@ -1,13 +1,414 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   margin: 0 auto;
+  width: 100%;
   min-height: 100vh;
   flex-direction: column;
   background-color: black;
-  color: white;
+  color: rgba(251,201,40,1);
+}
+
+p {
+  color: #FFFFC1;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+/* main page styles */
+#main-page {
+  margin-top: 80px;
+}
+
+#main-message {
+  text-align: center;
+  height: 60px;
+  font-size: 48px;
+  font-family: 'Faustina', serif;
+  margin-bottom: 50px;
+}
+
+#main-img {
+  display: block;
+  width: 90%;
+  margin: auto;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.login-link {
+  color: rgba(251,201,40,1);
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+  text-align: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  border-radius: 2px;
+  margin: 20px auto;
+  background-color: rgba(29,62,93,1);
+  width: 90%;
+}
+
+/* Sign In/Register styles */
+.headbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  min-height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: 'Faustina', serif;
+  background-color: black;
+}
+
+#drinks-up {
+  color: rgba(251,201,40,1);
+}
+
+#backsign {
+  position: absolute;
+  left: 16px;
+  top:16px;
+}
+
+#homesign {
+  position: absolute;
+  right: 13px;
+  top: 11px;
+}
+
+.login-form {
+  margin: 140px 23px 0 23px;
+  font-size: 28px;
+  font-family: 'Tajawal', sans-serif;
+  color: #FFFFC1;
+}
+
+.login-message {
+  color:#E38000;
+  font-size: 32px;
+  font-family: 'Faustina', serif;
+  margin-bottom: 28px;
+}
+
+input, select, textarea{
+  color: #FFFFC1;
+}
+
+textarea:focus, input:focus {
+  color: #FFFFC1;
+}
+
+input[type=submit] {
+  margin-top: 40px;
+  font-size: 28px;
+  color: rgba(251,201,40,1);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  border-radius: 2px;
+  background-color: rgba(29,62,93,1);
+}
+
+input[type=text] {
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid #FFFFC1;
+  font-size:18px;
+  width: 95%
+}
+
+input[type=password] {
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid #FFFFC1;
+  font-size: 20px;
+  width: 95%
+}
+
+/* home-page style */
+#home-page {
+  margin: 80px 23px 50px 23px;
+}
+
+#home-image{
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.drink-content {
+  width: 100%;
+  height: 70px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#beer-mug {
+  width: 60px;
+  height: auto;
+}
+
+#thumbnail {
+  width: 60px;
+  height: auto;
+}
+
+.name-location {
+  text-align: center;
+  font-size: 18px;
+}
+
+.rating-price {
+  text-align: center;
+}
+
+/* Create-page style */
+#signout-icon {
+  position: absolute;
+  right: 13px;
+  top: 9px;
+  z-index: 0;
+  width: 30px;
+  height: auto;
+}
+
+#create-page {
+  margin: 50px 23px 50px 23px;
+}
+
+#create-msg {
+  font-size: 30px;
+  color: #E38000;
+  margin-bottom: 10px;
+}
+
+#upload-file {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+#image-file {
+  display: none;
+}
+
+#drink-form {
+  width: 100%;
+}
+
+.custom-file-upload {
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid #ccc;
+  font-size: 80px;
+  display: inline-block;
+  padding: 37px 60px;
+  cursor: pointer;
+}
+
+#upload-msg {
+  position: absolute;
+  color: #FFFFC1;
+  font-size: 15px;
+}
+
+#price-input {
+  width: 50px;
+}
+
+#price-type-rating-nav {
+  width: 90%;
+  padding: 10px 0 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.select {
+  background-color: black;
+}
+
+.validation {
+  font-size: 14px;
+  color: #FFFFC1;
+  margin: 0 0 20px 0;
 }
 
 #home-img {
   width: 250px;
   height: auto;
+}
+
+#navbar {
+  background-color: black;
+  width: 100vw;
+  min-height: 50px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 5;
+}
+
+#navbar > ul {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-icon {
+  width: 39px;
+  height: auto;
+}
+
+/* update-page style */
+#update-page {
+  margin: 50px 23px 50px 23px;
+}
+
+#pic-div {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 250px;
+}
+
+#update-page-pic {
+  width: 180px;
+  height: auto;
+}
+
+/* detail-page style */
+#detail-page {
+  margin: 50px 23px 50px 23px;
+}
+
+#drink-name {
+  font-size: 34px;
+  color: #E38000;
+}
+
+#flex-div {
+  margin: auto;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#update-icon {
+  position: absolute;
+  right: 74px;
+  top: 11px;
+}
+
+#delete-icon {
+  position: absolute;
+  right: 43px;
+  top: 11px;
+}
+
+.description-location {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/* delete-page style */
+#delete-page {
+  margin: 150px 23px 50px 23px;
+}
+
+.confirm-delete-msg {
+  color: #FFFFC1;
+  text-decoration: underline;
+}
+
+/* search-page styles */
+
+#search-page {
+  margin: 50px 23px 50px 23px;
+}
+
+#search-div {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 35px;
+}
+
+#search-bar {
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid #FFFFC1;
+  font-size:18px;
+  width: 90%;
+  height: 35px;
+}
+
+#search-button {
+  width: 37px;
+  height: 37px;
+}
+
+#random-drink-div {
+  margin-top: 30px;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+}
+
+#random-title {
+  font-size: 21px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#random-img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+/* result-page style */
+#result-page {
+  margin: 100px 23px 50px 23px;
 }
