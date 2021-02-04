@@ -7,6 +7,8 @@ import uuid
 import boto3
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+import requests
+
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'albumcollector'
 def main(request):
@@ -22,7 +24,14 @@ def drinks_index(request):
 
 def drinks_detail(request, drink_id):
   drink = Drink.objects.get(id=drink_id)
-  return render(request, 'drinks/detail.html', {'drink': drink})
+  url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s={}"
+  drink_name = drink.name
+  drink_data = requests.get(url.format(drink_name)).json()
+  if drink_data['drinks'] == None:
+    instructions = "Sorry, no instructions were found."
+  else:
+    instructions = drink_data['drinks'][0]['strInstructions']
+  return render(request, 'drinks/detail.html', {'drink': drink, 'instructions': instructions})
 
 def create_page(request):
   drink_form = DrinkForm()
@@ -36,7 +45,6 @@ def create_drink(request):
     try:
       s3.upload_fileobj(image_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
-      print(request.POST)
       drink = Drink(url=url, name=request.POST['name'], location=request.POST['location'], price=request.POST['price'],
                     type=request.POST['type'], rating=request.POST['rating'], description=request.POST['description'], user=request.user)
       drink.save()
@@ -63,7 +71,7 @@ def update_drink(request, drink_id):
 
 class DrinkDelete(DeleteView):
   model = Drink
-  success_url = '/drinks/'
+  success_url = '/home/'
 
 def signup(request):
   error_message = ''
@@ -81,11 +89,14 @@ def signup(request):
 
 
 def search_page(request):
-  return render(request, 'drinks/search_page.html')
+  random = requests.get('https://www.thecocktaildb.com/api/json/v1/1/random.php').json()
+  random_drink = random['drinks'][0]
+  print(random_drink)
+  return render(request, 'drinks/search_page.html', {'random_drink': random_drink})
 
 
 def search_result(request):
   search = request.POST['drink_name']
-  results = Drink.objects.filter(name__contains=search)
+  results = Drink.objects.filter(name__icontains=search)
   print(results)
   return render(request, 'drinks/result.html', {'results': results})
