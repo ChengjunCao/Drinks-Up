@@ -104,5 +104,6 @@ def search_page(request):
 @login_required
 def search_result(request):
   search = request.POST['drink_name']
-  results = Drink.objects.filter(name__icontains=search)
+  drinks = Drink.objects.filter(user=request.user)
+  results = drinks.filter(name__icontains=search)
   return render(request, 'drinks/result.html', {'results': results})
