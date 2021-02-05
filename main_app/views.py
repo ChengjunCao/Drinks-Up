@@ -68,12 +68,16 @@ def update_page(request, drink_id):
 def update_drink(request, drink_id):
   drink = Drink.objects.get(id=drink_id)
   drink.user = request.user
-  drink.name = request.POST['name']
-  drink.location = request.POST['location']
-  drink.price = request.POST['price']
+  if request.POST['name']:
+    drink.name = request.POST['name']
+  if request.POST['location']:
+    drink.location = request.POST['location']
+  if request.POST['price']:
+    drink.price = request.POST['price']
   drink.type = request.POST['type']
   drink.rating = request.POST['rating']
-  drink.description = request.POST['description']
+  if request.POST['description']:
+    drink.description = request.POST['description']
   drink.save()
   return redirect('detail', drink_id=drink_id)
 
