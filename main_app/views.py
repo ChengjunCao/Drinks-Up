@@ -13,6 +13,7 @@ import requests
 
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'albumcollector'
+
 def main(request):
   return render(request, 'main.html')
 
@@ -106,3 +107,4 @@ def search_result(request):
   search = request.POST['drink_name']
   results = Drink.objects.filter(name__icontains=search)
   return render(request, 'drinks/result.html', {'results': results})
+
