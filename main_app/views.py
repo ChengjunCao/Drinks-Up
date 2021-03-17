@@ -57,7 +57,7 @@ def create_drink(request):
       drink.save()
       return redirect('detail', drink_id=drink.id)
     except:
-      print('An error occurred uploading file to S3')
+      print('Please take a picture or upload a photo of your drink to proceed :)')
   
 @login_required
 def update_page(request, drink_id):
